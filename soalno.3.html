@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <script>
+  let saldo = 1000000; // Saldo awal Rp. 1.000.000
+alert("Saldo awal: Rp." + saldo);
+
+let jenis = prompt("Ketik 'tarik' untuk tarik tunai atau 'setor' untuk setor tunai:");
+let jumlah = parseInt(prompt("Masukkan jumlah uang:"));
+
+if (jenis === "tarik") {
+  if (jumlah > saldo) {
+    alert("Error! Saldo tidak cukup.");
+  } else {
+    let saldoAkhir = saldo - jumlah;
+    alert(
+      "=== Transaksi Tarik Tunai ===\n" +
+      "Saldo awal: Rp." + saldo + "\n" +
+      "Tarik tunai: -Rp." + jumlah + "\n" +
+      "Saldo akhir: Rp." + saldoAkhir
+    );
+  }
+} else if (jenis === "setor") {
+  let saldoAkhir = saldo + jumlah;
+  alert(
+    "=== Transaksi Setor Tunai ===\n" +
+    "Saldo awal: Rp." + saldo + "\n" +
+    "Setor tunai: +Rp." + jumlah + "\n" +
+    "Saldo akhir: Rp." + saldoAkhir
+  );
+} else {
+  alert("Jenis transaksi tidak dikenal.");
+}
+  </script>
+</body>
+
+</html>

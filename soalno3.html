@@ -4,20 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>simulasi atm</title>
 </head>
 
 <body>
   <script>
-  let saldo = 1000000; // Saldo awal Rp. 1.000.000
+  let saldo = 1000000; 
+  // Saldo awal Rp. 1.000.000
 alert("Saldo awal: Rp." + saldo);
 
-let jenis = prompt("Ketik 'tarik' untuk tarik tunai atau 'setor' untuk setor tunai:");
-let jumlah = parseInt(prompt("Masukkan jumlah uang:"));
 
+//menampilkan pilihan tranksaksi kepada pengguna
+let jenis = prompt("Ketik 'tarik' untuk tarik tunai atau 'setor' untuk setor tunai:");
+//memasukan jumlah uang
+let jumlah = parseInt(prompt("Masukkan jumlah uang:"));
+//mengecek apakah saldo cukup untuk di tarik
 if (jenis === "tarik") {
   if (jumlah > saldo) {
     alert("Error! Saldo tidak cukup.");
+    //jika saldo tidak cukup
   } else {
     let saldoAkhir = saldo - jumlah;
     alert(
@@ -27,8 +32,10 @@ if (jenis === "tarik") {
       "Saldo akhir: Rp." + saldoAkhir
     );
   }
+  //setor uang
 } else if (jenis === "setor") {
-  let saldoAkhir = saldo + jumlah;
+  
+  let saldoAkhir = saldo + jumlah
   alert(
     "=== Transaksi Setor Tunai ===\n" +
     "Saldo awal: Rp." + saldo + "\n" +
